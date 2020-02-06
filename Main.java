@@ -32,13 +32,18 @@ public class Main {
             }
             else {
                 if (datosList.equals("+")){
-                    CStack.push(Calculadora.sum(CStack.pop(),CStack.pop()));
+                    CStack.push(Calculadora.sum(CStack.pop(),CStack.pop())); //Realiza la operacion de suma
                 }else if (datosList.equals("-")){
-                    CStack.push(Calculadora.subtraction(CStack.pop(),CStack.pop()));
+                    CStack.push(Calculadora.subtraction(CStack.pop(),CStack.pop())); //Realiza la operacion de resta
                 }else if (datosList.equals("*")){
-                    CStack.push(Calculadora.multiply(CStack.pop(),CStack.pop()));
+                    CStack.push(Calculadora.multiply(CStack.pop(),CStack.pop())); // Realiza la operacion de multiplicacion
                 }else if (datosList.equals("/")){
-                    CStack.push(Calculadora.division(CStack.pop(),CStack.pop()));
+                    try{
+                        CStack.push(Calculadora.division(CStack.pop(),CStack.pop())); // Realiza la operacion de divsion
+                    }
+                    catch (Exception e){
+                        System.out.println("La operacion esta indefinida, posiblemente una division por cero.");
+                    }
                 }else{
                     System.out.println("No se puede realizar la operacion porfavor ingrese nuevamente");
                 }
@@ -54,4 +59,3 @@ public class Main {
         }
     }
 }
-
