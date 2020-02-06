@@ -1,22 +1,13 @@
-/*
-Pablo Cesar Reyna Juarez #19822
-
-*/
-
 import java.io.File;
 import java.util.Scanner;
-import java.util.ArrayList;
-import java.util.Stack;
 
 public class Main {
     public static void main(String[] args) {
-        IStack<Integer> CStack = new MiStack<Integer>();// Se instancia un Stack
-        ICalculator Calculadora = new Calculator(); // Se instancia una nueva calculadora
+        iCalculadora Calculadora = new Micalculadora(); // Se instancia una nueva calculadora
         Scanner sc = null; // Se instancia un scanner que servira para leer el archivo de texto
 
         String archivo ="dato.txt"; //Se crea un String el cual servira para poder leer el archivo de texto
-        File fl = new File(archivo);
-        String datos = "";
+        File fl = new fichero(archivo);
 
         //Se crea un try and catch por posibles errores
         try {
@@ -27,28 +18,7 @@ public class Main {
             ex.printStackTrace();
         }
 
-        String[] datosList = datos.split("\\s");// Guarda los datos en un array con split
-        int contador = 0;//Variable que me servira para poder saber que dato se esta leyendo
 
-        while (contador < datosList.length ){
-            CStack.push(Integer.parseInt(datosList[contador]));
-            if (CStack.size() < 2){
-                System.out.println("No hay suficientes datos para operar");
-            }
-            else {
-                if (datosList.equals("+")){
-
-                }
-
-            }
-
-        }
-
-        if (CStack.size() == 1){
-            System.out.println("Su resultado es: "+ CStack.get());
-        }else{
-            System.out.println("No se pudo procesar la informacion porfavor comprueba los datos.");
-        }
     }
 }
 
